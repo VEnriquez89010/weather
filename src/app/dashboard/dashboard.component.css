@@ -1,0 +1,46 @@
+
+.table.table-striped{
+  font-size: 10px;
+}
+
+.table-wrapper
+{
+  border: 2px solid gray;
+  width: 200px;
+  height: 320px;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2ac2dd;
+  border-radius: 10px;
+}
+
+table
+{
+  margin-right: 30px;
+}
+
+td
+{
+  text-align: center;
+}
+th{
+  text-align: center;
+}
+
+select {
+  width:14.5vw;
+}
+
+

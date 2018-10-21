@@ -1,0 +1,70 @@
+
+ <!--<input type="date" (change)="onDateSelected($event.target.value)">-->
+
+<div class="container" id="mainDiv">
+  <div class="row" style="background-color:lightblue;">
+  <!--Title-->
+  <div class="col-md-12 col-lg-12 col-lg-12 text-center" style="padding-bottom: 50px;">
+    <h1>Weather Dashboard  <img src="../assets/wather.png" height="70" width="70"/></h1>
+    <h6><span>{{ currentDate }}</span></h6>
+  </div>
+      <div class="col-md-9 col-lg-9 col-lg-9" style="opacity: 0.9;">
+        <hr>
+        <h2>{{ currentCity }}</h2>
+        <h3>Today's temp is: {{ currentTemp }} °{{ tempSelector }} </h3>
+        <hr>
+        <div *ngIf="chart">
+          <canvas id="canvas">{{ chart }}</canvas>
+        </div>
+        <hr>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-3 col-small-high-bloc no-padding-horizontal">
+        <div class="col-xs-6 col-md-3 col-small-bloc no-padding-horizontal">
+          <div class="col-xs-6 bloc-parent bloc-small-parent">
+            <div class="bloc-small bloc anthracite">
+              <span>City</span> <br/>
+              <select class="form-control-sm" (change)="onCitySelected($event.target.value)">
+                <option value="Obregon">Cd. Obregon</option>
+                <option value="Navojoa">Navojoa</option>
+                <option value="Hermosillo">Hermosillo</option>
+                <option value="Nogales">Nogales</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-xs-6 bloc-parent bloc-small-parent">
+            <div class="bloc-small bloc brick">
+              <br/><span>Scale</span><br/>
+              <select class="form-control-sm" (change)="onTemperatureSelected($event.target.value)">
+                <option value="C">Celsius</option>
+                <option value="F">Fahrenheit</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6 bloc-parent bloc-high-parent">
+          <div class="bloc-high bloc indigo">
+            <br/><br/>
+            <div class="table-wrapper">
+              <table class="table table-striped">
+                <thead class="thead-dark">
+                <tr>
+                  <th>Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                  <th>Temperature</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let dash of dashboard">
+                  <td>{{ dash.datetime }}</td>
+                  <td>{{ dash.temp }}°</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+
+

@@ -1,0 +1,8 @@
+body{
+  padding-top: 80px;
+  background-image:url(assets/clouds.jpg)
+}
+
+.container {
+  opacity: 0.8;
+}

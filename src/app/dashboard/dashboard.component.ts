@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   dashboard: any = [];
   tempSelector = 'C';
   currentDate = new Date();
-  currentCity = 'Obregon';
+  currentCity = 'Ciudad Obregón';
   currentTemp;
 
   constructor(private dashboardService: DashboardService) { }
@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
    */
   ngOnInit() {
     this.dashboardService.getObregon().subscribe( result => {
-      this.updateDashboard( result , 'Obregon' );
+      this.updateDashboard( result , 'Ciudad Obregón' );
     });
   }
 
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
     switch (val) {
       case 'Obregon':
         this.dashboardService.getObregon().subscribe( result => {
-          this.updateDashboard( result , 'Obregon' );
+          this.updateDashboard( result , 'Ciudad Obregón' );
         });
         break;
       case 'Hermosillo':
@@ -167,7 +167,6 @@ export class DashboardComponent implements OnInit {
    */
   onDateSelected(val: any) {
     const out = [];
-    this.onCitySelected( this.currentCity );
     const dash = this.dashboard;
     JSON.parse(JSON.stringify(dash)).forEach( function(value){
       if ( new Date( val ) >= new Date( ) && new Date( value.datetime ) <= new Date( val ) && new Date( val ) <= new Date( dash[15].datetime )) {

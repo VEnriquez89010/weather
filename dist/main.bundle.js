@@ -512,7 +512,7 @@ var DashboardComponent = (function () {
         this.dashboard = [];
         this.tempSelector = 'C';
         this.currentDate = new Date();
-        this.currentCity = 'Obregon';
+        this.currentCity = 'Ciudad Obregón';
     }
     /*
       Initialize dashboard with CD Obregon information by default
@@ -520,7 +520,7 @@ var DashboardComponent = (function () {
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.dashboardService.getObregon().subscribe(function (result) {
-            _this.updateDashboard(result, 'Obregon');
+            _this.updateDashboard(result, 'Ciudad Obregón');
         });
     };
     /*
@@ -531,7 +531,7 @@ var DashboardComponent = (function () {
         switch (val) {
             case 'Obregon':
                 this.dashboardService.getObregon().subscribe(function (result) {
-                    _this.updateDashboard(result, 'Obregon');
+                    _this.updateDashboard(result, 'Ciudad Obregón');
                 });
                 break;
             case 'Hermosillo':
@@ -655,7 +655,6 @@ var DashboardComponent = (function () {
      */
     DashboardComponent.prototype.onDateSelected = function (val) {
         var out = [];
-        this.onCitySelected(this.currentCity);
         var dash = this.dashboard;
         JSON.parse(JSON.stringify(dash)).forEach(function (value) {
             if (new Date(val) >= new Date() && new Date(value.datetime) <= new Date(val) && new Date(val) <= new Date(dash[15].datetime)) {
